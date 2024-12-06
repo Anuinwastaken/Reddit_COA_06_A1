@@ -1,4 +1,4 @@
-#Original Code by amiroo4
+#Original Code by amiroo4 (https://www.reddit.com/user/amiroo4/)
 #Edited by Anuin
 
 grid: list = []
