@@ -1,36 +1,22 @@
-grid = []
+#Original Code by amiroo4
+#Edited by Anuin
+
+grid: list = []
 with open("data.txt", "r") as file:
     line = file.readline()
     while line:
         grid.append([i for i in line.strip()])
         line = file.readline()
 
-
-guard = (0, 0)
+guard: list = [0, 0]
 for x, row in enumerate(grid):
     if "^" in row:
         guard = (x, row.index("^"))
 
-def print_grid(grid):
+def print_grid(grid: list) -> None:
     for row in grid:
         print("".join(row))
     print()
-
-def get_color(value):
-    normalized_value = value % 360 
-    if normalized_value < 120:
-        r = 255 - (normalized_value * 255 // 120)
-        g = (normalized_value * 255 // 120)
-        b = 0
-    elif normalized_value < 240:
-        r = 0
-        g = 255 - ((normalized_value - 120) * 255 // 120)
-        b = ((normalized_value - 120) * 255 // 120)
-    else:
-        r = ((normalized_value - 240) * 255 // 120)
-        g = 0
-        b = 255 - ((normalized_value - 240) * 255 // 120)
-    return f"38;2;{r};{g};{b}"
 
 running = True
 count = 0
