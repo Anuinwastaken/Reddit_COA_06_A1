@@ -19,7 +19,7 @@ def print_grid(grid: list) -> None:
     print()
 
 running = True
-count = 0
+
 try:
     while running:
         match grid[guard[0]][guard[1]]:
@@ -28,7 +28,6 @@ try:
                     grid[guard[0]][guard[1]] = "X"
                     guard = (guard[0]-1, guard[1])
                     grid[guard[0]][guard[1]] = "^"
-                    count += 1
                 else:
                     grid[guard[0]][guard[1]] = ">"
             case ">":
@@ -36,7 +35,6 @@ try:
                     grid[guard[0]][guard[1]] = "X"
                     guard = (guard[0], guard[1]+1)
                     grid[guard[0]][guard[1]] = ">"
-                    count += 1
                 else:
                     grid[guard[0]][guard[1]] = "v"
             case "v":
@@ -44,7 +42,6 @@ try:
                     grid[guard[0]][guard[1]] = "X"
                     guard = (guard[0]+1, guard[1])
                     grid[guard[0]][guard[1]] = "v"
-                    count += 1
                 else:
                     grid[guard[0]][guard[1]] = "<"
             case "<":
@@ -52,7 +49,6 @@ try:
                     grid[guard[0]][guard[1]] = "X"
                     guard = (guard[0], guard[1]-1)
                     grid[guard[0]][guard[1]] = "<"
-                    count += 1
                 else:
                     grid[guard[0]][guard[1]] = "^"
             case _:
